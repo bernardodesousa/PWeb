@@ -6,10 +6,22 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>PWeb</title>
 </h:head>
 <h:body>
-	<h1>Hello, World!</h1>
+	<h1>Projeto Final PWeb</h1>
+	<p>Pedro Bernard de SOUSA - RA 0030481711006</p>
+	<p>Vítor Andrade Marques da Silva - RA 0030481511040</p>
+	
+	<h:form>
+		<h:commandLink value="Novo Evento" action="#{eventoBean.novo}" />
+		<br />
+		<h:commandLink value="Listar Eventos" action="#{eventoBean.listagem}" />
+		<br />
+		<h:commandLink value="Novo Participante" action="#{participanteBean.novo}" />
+		<br />
+		<h:commandLink value="Listar Participantes" action="#{participanteBean.listagem}" />
+	</h:form>
 </h:body>
 </html>

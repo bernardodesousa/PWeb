@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cadastro de Eventos</title>
+</h:head>
+
+<h:body>
+	<h1>Cadastro de Eventos</h1>
+	<h:form id="cadastro">
+		<!--  se nao colocado o messages as mensagens de erro de validacao e conversao do form nao aparecerao -->
+		<h:messages />
+		<!--  como tem a propriedade usuario dentro da Bean chama assim  -->
+		<!--  campos hidden é oculto só serve para ser alimentado no banco diretamente  -->
+		<h:inputHidden value="#{eventoBean.evento.idEvento}" />
+		<h:inputHidden value="#{eventoBean.evento.ativo}" />
+
+		<h:panelGrid columns="4"
+			columnClasses="cellGridFormLabel,none,cellGridFormLabel,none"
+			cellpadding="10" cellspacing="1">
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id="nome" label="Nome"
+				value="#{eventoBean.evento.nomeEvento}" size="32" maxlength="32"
+				required="true" requiredMessage="Você não tem nome?">
+				<f:validateLength minimum="2" maximum="32" />
+			</h:inputText>
+
+			<!--  validador size tamanho do quadrado, validateLength tamanho minimo e tamanho maximo -->
+			<h:outputText value="" />
+
+			<h:outputLabel value="Data:" for="data" />
+			<h:inputText id="data" label="Data"
+				value="#{eventoBean.evento.dtHrEvento}" size="16" maxlength="16"
+				required="true">
+				<f:convertDateTime dateStyle="medium" />
+				<!--  convertendo a data para java.util.date medium dd/mm/yyyy-->
+			</h:inputText>
+
+			<h:outputLabel value="Local:" for="local" />
+			<h:panelGroup>
+				<h:inputText id="local" label="local"
+					value="#{eventoBean.evento.localEvento}" size="32" maxlength="32">
+				</h:inputText>
+				<h:message for="local" />
+			</h:panelGroup>
+		</h:panelGrid>
+
+		<h:commandButton value="Salvar" action="#{eventoBean.salvar}" />
+
+		<h:button value="Voltar" outcome="/index.xhtml" />
+		<br />
+	</h:form>
+</h:body>
+</html>
