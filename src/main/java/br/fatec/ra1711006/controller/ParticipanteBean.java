@@ -86,12 +86,12 @@ public class ParticipanteBean {
 		}
 		*/
 
-		/*
 		ParticipanteRN p = new ParticipanteRN();
 		p.salvar(this.participante);
 		return "/index";
+		/*
 		*/
 		
-		return null;
+		// return null;
 	}
 }
