@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.NaturalId;
+// import org.hibernate.annotations.NaturalId;
 
 @Entity
 @Table(name = "participante")
@@ -27,7 +27,6 @@ public class Participante {
 	@JoinColumn(name="codigoEvento", referencedColumnName="idEvento", nullable=false, insertable=false, updatable=false)
 	private Evento evento;
 
-	@NaturalId
 	private int codigoEvento;
 
 	public int getCodigoEvento() {

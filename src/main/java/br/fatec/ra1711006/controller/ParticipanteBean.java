@@ -63,28 +63,35 @@ public class ParticipanteBean {
 
 	public String salvar() {
 		System.out.println("SALVAR");
+		/*
+		 */
 		System.out.println(this.participante.getNomeParticipante());
 		System.out.println(this.participante.getDtNascParticipante());
 		System.out.println(this.participante.getCPFParticipante());
 		System.out.println(this.participante.getEmailParticipante());
-		// System.out.println(this.participante.getEvento().getNomeEvento());
+		System.out.println(this.participante.getCodigoEvento());
+		
+		// System.out.println(">> "+this.participante.getEvento().getNomeEvento());
 
 		/*
 		// facescontext adiciona as mensagens de erro que possam ser criadas
 		FacesContext context = FacesContext.getCurrentInstance();
-		String senha = this.participante.getSenha();
+		String nome = this.participante.getNomeParticipante();
+		
 		if (!senha.equals(this.confirmarSenha)) { // adicionando mensagem ao
 													// context
 			FacesMessage facesMessage = new FacesMessage("A senha não foi confirmada corretamente");
 			context.addMessage(null, facesMessage);
 			return null; // null nao caira em nenhuma pagina, fica na mesma de origem
 		}
-
-		// se deu certo
-		UsuarioRN usuarioRN = new UsuarioRN();
-		usuarioRN.salvar(this.usuario);
-		return "usuariosucesso"; // tenta abrir pagina /public/usuariosucesso
 		*/
+
+		/*
+		ParticipanteRN p = new ParticipanteRN();
+		p.salvar(this.participante);
+		return "/index";
+		*/
+		
 		return null;
 	}
 }

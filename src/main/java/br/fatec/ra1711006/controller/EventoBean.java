@@ -1,14 +1,16 @@
 package br.fatec.ra1711006.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 // import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.faces.model.SelectItem;
 
-import antlr.collections.List;
+// import antlr.collections.List;
 import br.fatec.ra1711006.dao.EventoDAO;
 import br.fatec.ra1711006.dao.EventoDAOHibernate;
 import br.fatec.ra1711006.model.Evento;
@@ -64,12 +66,17 @@ public class EventoBean {
 		return "/index";
 	}
 	
-	public ArrayList<Integer> getEventos() {
-		ArrayList<Integer> eventos = new ArrayList<Integer>();
-		
-		eventos.add(1);
-		eventos.add(2);
-		
+	public List<SelectItem> getEventos() {
+		List<SelectItem> eventos = new ArrayList<SelectItem>();
+
+		EventoRN eRN = new EventoRN();
+		List<Evento> evento2 = eRN.listar();
+
+		for (Evento e : evento2) {
+			SelectItem selecao = new SelectItem(e.getIdEvento(), e.getNomeEvento());
+			eventos.add(selecao);
+		}
+
 		return eventos;
 	}
 }

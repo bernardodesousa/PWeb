@@ -64,8 +64,7 @@
 			<h:panelGroup>
 				<h:selectOneMenu id="evento" value="#{participanteBean.participante.codigoEvento}" >
 				   	<f:selectItems
-				   		value="#{eventoBean.listaEventos}" var="e"
-		   				itemLabel="#{e.nomeEvento}" itemValue="#{e.idEvento}"/>
+				   		value="#{eventoBean.eventos}" />
 				</h:selectOneMenu>
 			</h:panelGroup>
 		</h:panelGrid>
