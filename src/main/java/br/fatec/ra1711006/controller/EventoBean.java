@@ -63,7 +63,7 @@ public class EventoBean {
 		EventoRN e = new EventoRN();
 		e.salvar(this.evento);
 
-		return "/index";
+		return "novo_evento_sucesso";
 	}
 	
 	public List<SelectItem> getEventos() {

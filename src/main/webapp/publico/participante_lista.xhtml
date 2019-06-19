@@ -7,7 +7,8 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Listagem de Participantes</title>
+	<link rel="stylesheet" href="publico/style.css"></link>
+	<title>Fatec PWeb</title>
 </h:head>
 
 <h:body>
@@ -20,34 +21,41 @@
 			selection="#{participanteBean.evento}">
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="idParticipante" />
+					<h:outputText value="ID" />
 				</f:facet>
 				<h:outputText value="#{item.idParticipante}" />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="nomeParticipante" />
+					<h:outputText value="Nome" />
 				</f:facet>
 				<h:outputText value="#{item.nomeParticipante}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="dtNascParticipante" />
+					<h:outputText value="Nascimento" />
 				</f:facet>
 				<h:outputText value="#{item.dtNascParticipante}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="emailParticipante" />
+					<h:outputText value="Email" />
 				</f:facet>
 				<h:outputText value="#{item.emailParticipante}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="CPFParticipante" />
+					<h:outputText value="CPF" />
 				</f:facet>
 				<h:outputText value="#{item.CPFParticipante}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Evento" />
+				</f:facet>
+				<h:outputText value="#{item.evento.nomeEvento}" />
 			</h:column>
 		</h:dataTable>
 
